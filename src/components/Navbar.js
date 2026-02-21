@@ -41,7 +41,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center space-x-4">
-            <Link href="/contact#join-now"><button className="hidden md:inline-block bg-(--brand-lime) text-(--brand-gray) font-bold uppercase tracking-wider px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-transform hover:scale-105">
+            <Link href="/contact#join-now"><button className="hidden md:inline-block bg-(--brand-lime) text-(--brand-gray) font-bold uppercase tracking-wider px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-transform hover:scale-105 cursor-pointer">
                 Join Now
             </button></Link>
             <button 
