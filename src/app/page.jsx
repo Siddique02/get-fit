@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Dumbbell, Users, Zap } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -17,25 +20,54 @@ export default function Home() {
           className="object-cover"
         />
         <div className="relative z-20 max-w-3xl px-4">
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider high-contrast mb-4">
+          <motion.h1
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider high-contrast mb-4"
+          >
             Forge Your Legacy
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto">
+          </motion.h1>
+
+          <motion.p
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto"
+          >
             Unleash your potential at GetFit, where strength is built, goals are
             crushed, and community thrives.
-          </p>
-          <Link
-            href="/contact#join-now"
-            className="bg-(--brand-lime) text-(--brand-gray) font-bold uppercase tracking-wider px-10 py-4 rounded-full text-lg hover:opacity-50 transition-transform hover:scale-105"
+          </motion.p>
+
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            Become a Member
-          </Link>
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            >
+              <Link
+                href="/contact#join-now"
+                className="bg-(--brand-lime) text-(--brand-gray) font-bold uppercase tracking-wider px-10 py-4 rounded-full text-lg hover:opacity-50 transition-transform hover:scale-105"
+              >
+                Become a Member
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-black/30">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+        <motion.div 
+        className="container mx-auto px-4 md:px-6 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}>
           <h2 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-wider mb-2">
             Our Programs
           </h2>
@@ -60,12 +92,17 @@ export default function Home() {
               description="Utilize our state-of-the-art equipment and spacious workout zones on your own schedule."
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Why GetFit Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4 md:px-6">
+        <motion.div 
+        className="container mx-auto px-4 md:px-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative w-full h-80 md:h-96 overflow-hidden rounded-2xl">
               <Image
@@ -102,7 +139,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Call to Action / Lead Form */}
